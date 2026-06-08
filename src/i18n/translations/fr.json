@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "predictions": "Prédictions",
+    "ranking": "Classement",
+    "token": "Token",
+    "buy": "Acheter $MUNDIAL",
+    "subtitle": "Mundial Predict"
+  },
+  "hero": {
+    "badge": "Coupe du Monde FIFA 2026",
+    "badgeHosts": "USA, Canada et Mexique",
+    "heading": "PRÉDISEZ.GAGNEZ.CONQUÉREZ.",
+    "subtitle": "La plateforme officielle de prédictions de la Coupe du Monde FIFA 2026. 48 nations, 12 groupes, 104 matchs. Prédisez, grimpez au classement et gagnez de vrais tokens {token} sur la blockchain Solana.",
+    "cta": "Commencer à Prédire",
+    "stats": {
+      "groupMatches": "Matchs - Phase de Groupes",
+      "nationalTeams": "Sélections Nationales",
+      "groups": "Groupes (A-L)",
+      "totalMatches": "Matchs Totaux du Tournoi"
+    },
+    "trust": {
+      "security": "Audit de Sécurité",
+      "wallet": "Portefeuille Sécurisé",
+      "network": "Réseau Solana"
+    }
+  },
+  "predictions": {
+    "badge": "Coupe du Monde FIFA 2026",
+    "heading": "CHOISISSEZ.PRÉDISEZ.GAGNEZ.",
+    "subtitle": "72 matchs de phase de groupes. 48 nations. 12 groupes. Chaque prédiction correcte vous octroie des tokens {token}. Connectez votre portefeuille et commencez à gagner maintenant.",
+    "totalPredictions": "prédictions totales enregistrées",
+    "all": "Tous",
+    "group": "Groupe",
+    "difficulty": {
+      "easy": "Facile x1",
+      "medium": "Moyen x2",
+      "hard": "Difficile x3"
+    },
+    "reward": "Récompense",
+    "live": "EN DIRECT",
+    "draw": "Match Nul (x2.5)",
+    "confirm": "Confirmer la Prédiction",
+    "selectHint": "Sélectionnez votre prédiction",
+    "connectWallet": "Connectez votre portefeuille pour prédire",
+    "groupStage": "Phase de groupes : 72 matchs",
+    "groupsInfo": "12 groupes (A-L)",
+    "teamsInfo": "48 nations",
+    "knockoutNote": "Sélectionnez un groupe pour filtrer les matchs. La phase éliminatoire (Huitièmes de finale, Quarts de finale, Demi-finale, Finale) sera activée au début du tournoi."
+  },
+  "ranking": {
+    "badge": "Classement",
+    "heading": "MEILLEURS PRÉDICTEURS",
+    "subtitle": "Les meilleurs pronostiqueurs de la Coupe du Monde remportent des récompenses exclusives en {token}. Grimpez au classement et conquérez la première place.",
+    "table": {
+      "rank": "#",
+      "predictor": "Prédicteur",
+      "points": "Points",
+      "predictions": "Prédictions",
+      "accuracy": "Précision",
+      "streak": "Série"
+    },
+    "precision": "précision",
+    "rewards": {
+      "first": {
+        "place": "1ère Place",
+        "reward": "50 000 $MUNDIAL",
+        "extra": "+ Airdrop Exclusif"
+      },
+      "second": {
+        "place": "2ème Place",
+        "reward": "25 000 $MUNDIAL",
+        "extra": "+ Rôle d'ambassadeur"
+      },
+      "third": {
+        "place": "3ème Place",
+        "reward": "10 000 $MUNDIAL",
+        "extra": "+ Merch Exclusif"
+      }
+    }
+  },
+  "token": {
+    "badge": "À Propos du Token",
+    "heading": "$MUNDIAL",
+    "subtitle": "Le token qui unit la passion du football à la puissance de la blockchain Solana. Disponible dès maintenant sur pump.fun.",
+    "network": "Réseau : Solana",
+    "price": "Prix Actuel",
+    "buyButton": "Acheter sur pump.fun",
+    "features": {
+      "security": {
+        "title": "Sécurité Vérifiable",
+        "description": "Contrats vérifiables sur Solana. Pas de rug pulls, pas de honeypots. Transparence totale à chaque transaction."
+      },
+      "community": {
+        "title": "Communauté Mondiale",
+        "description": "800M+ de personnes connectées par la passion du football. Le token qui unit le monde à travers le sport."
+      },
+      "deflationary": {
+        "title": "Déflationniste",
+        "description": "Mécanisme de buy & burn à chaque prédiction. Plus on joue, plus le token devient rare."
+      }
+    },
+    "howToWin": {
+      "title": "Comment Gagner des $MUNDIAL",
+      "steps": [
+        {
+          "title": "Connecter le Portefeuille",
+          "description": "Connectez votre portefeuille Solana (Phantom ou Solflare) en toute sécurité."
+        },
+        {
+          "title": "Prédire les Matchs",
+          "description": "Choisissez le vainqueur, le match nul ou le buteur. Accumulez des points pour chaque bonne prédiction."
+        },
+        {
+          "title": "Grimper au Classement",
+          "description": "Affrontez des milliers de prédicteurs. Les meilleurs gagnent des récompenses massives."
+        },
+        {
+          "title": "Récupérer les Tokens",
+          "description": "Convertissez vos points en vrais $MUNDIAL. Plus vous êtes bon, plus vous gagnez."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "brand": "La plateforme de prédictions de la Coupe du Monde où la passion du football rencontre la puissance de Solana. Prédisez, gagnez et conquérez.",
+    "builtOn": "Construit sur Solana",
+    "liveOn": "En direct sur pump.fun",
+    "navigation": "Navigation",
+    "links": {
+      "predictions": "Prédictions",
+      "ranking": "Classement",
+      "tokenInfo": "Token Info",
+      "buyToken": "Acheter $MUNDIAL"
+    },
+    "community": "Communauté",
+    "social": {
+      "telegram": "Telegram",
+      "twitter": "X (Twitter)",
+      "pumpfun": "pump.fun"
+    },
+    "copyright": "© 2026 $MUNDIAL. Tous droits réservés. Ceci n'est pas un conseil financier. Les crypto-monnaies comportent des risques.",
+    "madeWith": "Fait avec ❤️ pour la communauté mondiale du football"
+  },
+  "loading": "Chargement de $MUNDIAL...",
+  "languageSwitcher": {
+    "en": "EN",
+    "es": "ES",
+    "pt": "PT",
+    "de": "DE",
+    "fr": "FR"
+  }
+}

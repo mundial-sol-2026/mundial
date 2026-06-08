@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "predictions": "Prediksi",
+    "ranking": "Peringkat",
+    "token": "Token",
+    "buy": "Beli $MUNDIAL",
+    "subtitle": "Mundial Predict"
+  },
+  "hero": {
+    "badge": "FIFA World Cup 2026",
+    "badgeHosts": "AS, Kanada & Meksiko",
+    "heading": "PREDIKSI.MENANG.KUASAI.",
+    "subtitle": "Platform prediksi resmi FIFA World Cup 2026. 48 tim, 12 grup, 104 pertandingan. Prediksi, naik peringkat dan raih token {token} asli di blockchain Solana.",
+    "cta": "Mulai Memprediksi",
+    "stats": {
+      "groupMatches": "Pertandingan - Fase Grup",
+      "nationalTeams": "Tim Nasional",
+      "groups": "Grup (A-L)",
+      "totalMatches": "Total Pertandingan Turnamen"
+    },
+    "trust": {
+      "security": "Audit Keamanan",
+      "wallet": "Dompet Aman",
+      "network": "Jaringan Solana"
+    }
+  },
+  "predictions": {
+    "badge": "FIFA World Cup 2026",
+    "heading": "PILIH.PREDIKSI.MENANG.",
+    "subtitle": "72 pertandingan fase grup. 48 tim. 12 grup. Setiap prediksi benar memberi kamu token {token}. Hubungkan dompetmu dan mulai menang sekarang.",
+    "totalPredictions": "total prediksi terdaftar",
+    "all": "Semua",
+    "group": "Grup",
+    "difficulty": {
+      "easy": "Mudah x1",
+      "medium": "Sedang x2",
+      "hard": "Sulit x3"
+    },
+    "reward": "Hadiah",
+    "live": "LIVE",
+    "draw": "Seri (x2.5)",
+    "confirm": "Konfirmasi Prediksi",
+    "selectHint": "Pilih prediksi kamu",
+    "connectWallet": "Hubungkan dompet untuk memprediksi",
+    "groupStage": "Fase Grup: 72 pertandingan",
+    "groupsInfo": "12 grup (A-L)",
+    "teamsInfo": "48 tim",
+    "knockoutNote": "Pilih grup untuk memfilter pertandingan. Fase knockout (Babak 32, Babak 16, Perempat Final, Semifinal, Final) akan diaktifkan saat turnamen dimulai."
+  },
+  "ranking": {
+    "badge": "Papan Peringkat",
+    "heading": "PREDIKTOR TERBAIK",
+    "subtitle": "Prediktor Piala Dunia terbaik memenangkan hadiah {token} eksklusif. Naik peringkat dan kuasai posisi pertama.",
+    "table": {
+      "rank": "#",
+      "predictor": "Prediktor",
+      "points": "Poin",
+      "predictions": "Prediksi",
+      "accuracy": "Akurasi",
+      "streak": "Streak"
+    },
+    "precision": "akurasi",
+    "rewards": {
+      "first": {
+        "place": "Juara 1",
+        "reward": "50.000 $MUNDIAL",
+        "extra": "+ Airdrop Eksklusif"
+      },
+      "second": {
+        "place": "Juara 2",
+        "reward": "25.000 $MUNDIAL",
+        "extra": "+ Peran Duta"
+      },
+      "third": {
+        "place": "Juara 3",
+        "reward": "10.000 $MUNDIAL",
+        "extra": "+ Merch Eksklusif"
+      }
+    }
+  },
+  "token": {
+    "badge": "Tentang Token",
+    "heading": "$MUNDIAL",
+    "subtitle": "Token yang menyatukan gairah sepak bola dengan kekuatan blockchain Solana. Tersedia sekarang di pump.fun.",
+    "network": "Jaringan: Solana",
+    "price": "Harga Saat Ini",
+    "buyButton": "Beli di pump.fun",
+    "features": {
+      "security": {
+        "title": "Keamanan yang Dapat Diaudit",
+        "description": "Kontrak yang dapat diverifikasi di Solana. Tanpa rug pull, tanpa honeypot. Transparansi penuh di setiap transaksi."
+      },
+      "community": {
+        "title": "Komunitas Global",
+        "description": "800M+ penutur bahasa yang terhubung melalui gairah sepak bola. Token yang menyatukan dunia melalui olahraga."
+      },
+      "deflationary": {
+        "title": "Deflasi",
+        "description": "Mekanisme beli & bakar dengan setiap prediksi. Semakin banyak bermain, token semakin langka."
+      }
+    },
+    "howToWin": {
+      "title": "Cara Mendapatkan $MUNDIAL",
+      "steps": [
+        {
+          "title": "Hubungkan Dompet",
+          "description": "Tautkan dompet Solana kamu (Phantom atau Solflare) dengan aman."
+        },
+        {
+          "title": "Prediksi Pertandingan",
+          "description": "Pilih pemenang, seri atau pencetak gol. Kumpulkan poin untuk setiap prediksi benar."
+        },
+        {
+          "title": "Naik Peringkat",
+          "description": "Bersaing dengan ribuan prediktor. Yang terbaik mendapat hadiah masif."
+        },
+        {
+          "title": "Klaim Token",
+          "description": "Konversi poinmu menjadi $MUNDIAL asli. Semakin bagus, semakin banyak hasilnya."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "brand": "Platform prediksi Piala Dunia tempat gairah sepak bola bertemu kekuatan Solana. Prediksi, menang dan kuasai.",
+    "builtOn": "Dibangun di Solana",
+    "liveOn": "Live di pump.fun",
+    "navigation": "Navigasi",
+    "links": {
+      "predictions": "Prediksi",
+      "ranking": "Peringkat",
+      "tokenInfo": "Info Token",
+      "buyToken": "Beli $MUNDIAL"
+    },
+    "community": "Komunitas",
+    "social": {
+      "telegram": "Telegram",
+      "twitter": "X (Twitter)",
+      "pumpfun": "pump.fun"
+    },
+    "copyright": "© 2026 $MUNDIAL. Hak cipta dilindungi. Ini bukan nasihat keuangan. Kripto memiliki risiko.",
+    "madeWith": "Dibuat dengan ❤️ untuk komunitas sepak bola global"
+  },
+  "loading": "Memuat $MUNDIAL...",
+  "languageSwitcher": {
+    "en": "EN",
+    "es": "ES",
+    "pt": "PT",
+    "de": "DE",
+    "fr": "FR"
+  }
+}

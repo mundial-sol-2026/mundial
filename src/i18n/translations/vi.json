@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "predictions": "Dự đoán",
+    "ranking": "Bảng xếp hạng",
+    "token": "Token",
+    "buy": "Mua $MUNDIAL",
+    "subtitle": "Mundial Predict"
+  },
+  "hero": {
+    "badge": "FIFA World Cup 2026",
+    "badgeHosts": "Mỹ, Canada & Mexico",
+    "heading": "DỰ ĐOÁN.THẮNG.THÚC ĐỘ.",
+    "subtitle": "Nền tảng dự đoán chính thức cho FIFA World Cup 2026. 48 đội tuyển, 12 bảng đấu, 104 trận. Dự đoán, vươn lên bảng xếp hạng và nhận token {token} thật trên blockchain Solana.",
+    "cta": "Bắt đầu dự đoán",
+    "stats": {
+      "groupMatches": "Trận đấu - Vòng bảng",
+      "nationalTeams": "Đội tuyển quốc gia",
+      "groups": "Bảng đấu (A-L)",
+      "totalMatches": "Tổng trận đấu giải"
+    },
+    "trust": {
+      "security": "Kiểm tra bảo mật",
+      "wallet": "Ví an toàn",
+      "network": "Mạng Solana"
+    }
+  },
+  "predictions": {
+    "badge": "FIFA World Cup 2026",
+    "heading": "CHỌN.DỰ ĐOÁN.THẮNG.",
+    "subtitle": "72 trận vòng bảng. 48 đội tuyển. 12 bảng đấu. Mỗi dự đoán đúng mang lại token {token} cho bạn. Kết nối ví và bắt đầu thắng ngay.",
+    "totalPredictions": "lượt dự đoán đã đăng ký",
+    "all": "Tất cả",
+    "group": "Bảng",
+    "difficulty": {
+      "easy": "Dễ x1",
+      "medium": "Trung bình x2",
+      "hard": "Khó x3"
+    },
+    "reward": "Phần thưởng",
+    "live": "TRỰC TIẾP",
+    "draw": "Hòa (x2.5)",
+    "confirm": "Xác nhận dự đoán",
+    "selectHint": "Chọn dự đoán của bạn",
+    "connectWallet": "Kết nối ví để dự đoán",
+    "groupStage": "Vòng bảng: 72 trận",
+    "groupsInfo": "12 bảng đấu (A-L)",
+    "teamsInfo": "48 đội tuyển",
+    "knockoutNote": "Chọn một bảng để lọc trận đấu. Vòng đấu loại (Vòng 32, Vòng 16, Tứ kết, Bán kết, Chung kết) sẽ được kích hoạt khi giải bắt đầu."
+  },
+  "ranking": {
+    "badge": "Bảng xếp hạng",
+    "heading": "NGƯỜI DỰ ĐOÁN HÀNG ĐẦU",
+    "subtitle": "Những người dự đoán World Cup giỏi nhất nhận phần thưởng {token} độc quyền. Vươn lên xếp hạng và chinh phục vị trí đầu tiên.",
+    "table": {
+      "rank": "#",
+      "predictor": "Người dự đoán",
+      "points": "Điểm",
+      "predictions": "Dự đoán",
+      "accuracy": "Chính xác",
+      "streak": "Chuỗi thắng"
+    },
+    "precision": "chính xác",
+    "rewards": {
+      "first": {
+        "place": "Hạng 1",
+        "reward": "50,000 $MUNDIAL",
+        "extra": "+ Airdrop độc quyền"
+      },
+      "second": {
+        "place": "Hạng 2",
+        "reward": "25,000 $MUNDIAL",
+        "extra": "+ Vai trò đại sứ"
+      },
+      "third": {
+        "place": "Hạng 3",
+        "reward": "10,000 $MUNDIAL",
+        "extra": "+ Merch độc quyền"
+      }
+    }
+  },
+  "token": {
+    "badge": "Về Token",
+    "heading": "$MUNDIAL",
+    "subtitle": "Token kết nối niềm đam mê bóng đá với sức mạnh blockchain Solana. Có sẵn ngay trên pump.fun.",
+    "network": "Mạng: Solana",
+    "price": "Giá hiện tại",
+    "buyButton": "Mua trên pump.fun",
+    "features": {
+      "security": {
+        "title": "Bảo mật có kiểm chứng",
+        "description": "Hợp đồng có thể xác minh trên Solana. Không rug pull, không honeypot. Minh bạch hoàn toàn trong mọi giao dịch."
+      },
+      "community": {
+        "title": "Cộng đồng toàn cầu",
+        "description": "800M+ người nói tiếng Việt kết nối bởi đam mê bóng đá. Token đoàn kết thế giới qua thể thao."
+      },
+      "deflationary": {
+        "title": "Giảm phát",
+        "description": "Cơ chế mua và đốt với mỗi dự đoán. Càng nhiều người chơi, token càng trở nên khan hiếm."
+      }
+    },
+    "howToWin": {
+      "title": "Cách kiếm $MUNDIAL",
+      "steps": [
+        {
+          "title": "Kết nối ví",
+          "description": "Liên kết ví Solana (Phantom hoặc Solflare) một cách an toàn."
+        },
+        {
+          "title": "Dự đoán trận đấu",
+          "description": "Chọn người chiến thắng, hòa hoặc cầu thủ ghi bàn. Tích lũy điểm cho mỗi dự đoán đúng."
+        },
+        {
+          "title": "Vươn lên bảng xếp hạng",
+          "description": "Cạnh tranh với hàng ngàn người dự đoán. Người giỏi nhất nhận phần thưởng lớn."
+        },
+        {
+          "title": "Nhận token",
+          "description": "Chuyển đổi điểm thành $MUNDIAL thật. Càng giỏi, càng kiếm nhiều."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "brand": "Nền tảng dự đoán World Cup nơi đam mê bóng đá gặp sức mạnh Solana. Dự đoán, thắng và chinh phục.",
+    "builtOn": "Xây dựng trên Solana",
+    "liveOn": "Trực tiếp trên pump.fun",
+    "navigation": "Điều hướng",
+    "links": {
+      "predictions": "Dự đoán",
+      "ranking": "Bảng xếp hạng",
+      "tokenInfo": "Thông tin Token",
+      "buyToken": "Mua $MUNDIAL"
+    },
+    "community": "Cộng đồng",
+    "social": {
+      "telegram": "Telegram",
+      "twitter": "X (Twitter)",
+      "pumpfun": "pump.fun"
+    },
+    "copyright": "© 2026 $MUNDIAL. Bảo lưu mọi quyền. Đây không phải là lời khuyên tài chính. Tiền điện tử có rủi ro.",
+    "madeWith": "Được tạo bằng ❤️ cho cộng đồng bóng đá toàn cầu"
+  },
+  "loading": "Đang tải $MUNDIAL...",
+  "languageSwitcher": {
+    "en": "EN",
+    "es": "ES",
+    "pt": "PT",
+    "de": "DE",
+    "fr": "FR"
+  }
+}

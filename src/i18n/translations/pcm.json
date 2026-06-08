@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "home": "Home",
+    "predictions": "Predictions",
+    "ranking": "Ranking",
+    "token": "Token",
+    "buy": "Buy $MUNDIAL",
+    "subtitle": "Mundial Predict"
+  },
+  "hero": {
+    "badge": "FIFA World Cup 2026",
+    "badgeHosts": "USA, Canada & Mexico",
+    "heading": "PREDICT.WIN.CONQUER.",
+    "subtitle": "The official prediction platform for FIFA World Cup 2026. 48 nations, 12 groups, 104 matches. Predict, climb the rankings and earn real {token} tokens on Solana blockchain.",
+    "cta": "Start to Predict",
+    "stats": {
+      "groupMatches": "Matches - Group Stage",
+      "nationalTeams": "National Teams",
+      "groups": "Groups (A-L)",
+      "totalMatches": "Total Tournament Matches"
+    },
+    "trust": {
+      "security": "Security Audit",
+      "wallet": "Secure Wallet",
+      "network": "Solana Network"
+    }
+  },
+  "predictions": {
+    "badge": "FIFA World Cup 2026",
+    "heading": "CHOOSE. PREDICT. WIN.",
+    "subtitle": "72 group stage matches. 48 nations. 12 groups. Every correct prediction earns you {token} tokens. Connect your wallet and start winning now.",
+    "totalPredictions": "total predictions wey don register",
+    "all": "All",
+    "group": "Group",
+    "difficulty": {
+      "easy": "Easy x1",
+      "medium": "Medium x2",
+      "hard": "Hard x3"
+    },
+    "reward": "Reward",
+    "live": "LIVE",
+    "draw": "Draw (x2.5)",
+    "confirm": "Confirm Prediction",
+    "selectHint": "Choose your prediction",
+    "connectWallet": "Connect your wallet to predict",
+    "groupStage": "Group Stage: 72 matches",
+    "groupsInfo": "12 groups (A-L)",
+    "teamsInfo": "48 nations",
+    "knockoutNote": "Select one group to filter matches. The knockout stage (Round of 32, Round of 16, Quarter-finals, Semi-finals, Final) go activate when the tournament start."
+  },
+  "ranking": {
+    "badge": "Leaderboard",
+    "heading": "TOP PREDICTORS",
+    "subtitle": "The best World Cup predictors go collect exclusive {token} rewards. Climb the rankings and grab first position.",
+    "table": {
+      "rank": "#",
+      "predictor": "Predictor",
+      "points": "Points",
+      "predictions": "Predictions",
+      "accuracy": "Accuracy",
+      "streak": "Streak"
+    },
+    "precision": "correct",
+    "rewards": {
+      "first": {
+        "place": "1st Position",
+        "reward": "50,000 $MUNDIAL",
+        "extra": "+ Exclusive Airdrop"
+      },
+      "second": {
+        "place": "2nd Position",
+        "reward": "25,000 $MUNDIAL",
+        "extra": "+ Ambassador Role"
+      },
+      "third": {
+        "place": "3rd Position",
+        "reward": "10,000 $MUNDIAL",
+        "extra": "+ Exclusive Merch"
+      }
+    }
+  },
+  "token": {
+    "badge": "About the Token",
+    "heading": "$MUNDIAL",
+    "subtitle": "The token wey dey join football passion with the power of Solana blockchain. Dey available now for pump.fun.",
+    "network": "Network: Solana",
+    "price": "Current Price",
+    "buyButton": "Buy for pump.fun",
+    "features": {
+      "security": {
+        "title": "Security wey Dey Auditable",
+        "description": "Contracts wey people fit verify for Solana. No rug pulls, no honeypots. Full transparency for every transaction."
+      },
+      "community": {
+        "title": "Global Community",
+        "description": "800M+ people wey dey connected by football passion. The token wey dey unite the world through sport."
+      },
+      "deflationary": {
+        "title": "Deflationary",
+        "description": "Buy & burn mechanism with every prediction. The more people play, the more scarce the token dey."
+      }
+    },
+    "howToWin": {
+      "title": "How to Earn $MUNDIAL",
+      "steps": [
+        {
+          "title": "Connect Wallet",
+          "description": "Link your Solana wallet (Phantom or Solflare) securely."
+        },
+        {
+          "title": "Predict Matches",
+          "description": "Choose the winner, draw or top scorer. Collect points for every correct pick."
+        },
+        {
+          "title": "Climb Rankings",
+          "description": "Compete against thousands of predictors. The best go chop massive rewards."
+        },
+        {
+          "title": "Claim Tokens",
+          "description": "Convert your points into real $MUNDIAL. The better you be, the more you go make."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "brand": "The World Cup prediction platform where football passion meet Solana power. Predict, win and conquer.",
+    "builtOn": "Built on Solana",
+    "liveOn": "Live on pump.fun",
+    "navigation": "Navigation",
+    "links": {
+      "predictions": "Predictions",
+      "ranking": "Ranking",
+      "tokenInfo": "Token Info",
+      "buyToken": "Buy $MUNDIAL"
+    },
+    "community": "Community",
+    "social": {
+      "telegram": "Telegram",
+      "twitter": "X (Twitter)",
+      "pumpfun": "pump.fun"
+    },
+    "copyright": "© 2026 $MUNDIAL. All rights reserved. This one no be financial advice. Cryptocurrencies carry risks.",
+    "madeWith": "Made with ❤️ for the global football community"
+  },
+  "loading": "Loading $MUNDIAL...",
+  "languageSwitcher": {
+    "en": "EN",
+    "es": "ES",
+    "pt": "PT",
+    "de": "DE",
+    "fr": "FR"
+  }
+}

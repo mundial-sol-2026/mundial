@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "home": "Home",
+    "predictions": "Hula",
+    "ranking": "Ranking",
+    "token": "Token",
+    "buy": "Bilhin $MUNDIAL",
+    "subtitle": "Mundial Predict"
+  },
+  "hero": {
+    "badge": "FIFA World Cup 2026",
+    "badgeHosts": "USA, Canada & Mexico",
+    "heading": "HULA.PANALO.SAKOP.",
+    "subtitle": "Ang opisyal na hulaan platform para sa FIFA World Cup 2026. 48 bansa, 12 grupo, 104 laro. Humula, umakyat sa ranking at manalo ng totoong {token} tokens sa Solana blockchain.",
+    "cta": "Simulang Maghula",
+    "stats": {
+      "groupMatches": "Laro - Group Stage",
+      "nationalTeams": "Pambansang Team",
+      "groups": "Mga Grupo (A-L)",
+      "totalMatches": "Kabuuang Laro ng Torneo"
+    },
+    "trust": {
+      "security": "Security Audit",
+      "wallet": "Ligtas na Wallet",
+      "network": "Solana Network"
+    }
+  },
+  "predictions": {
+    "badge": "FIFA World Cup 2026",
+    "heading": "PUMILI.HULA.PANALO.",
+    "subtitle": "72 group stage na laro. 48 bansa. 12 grupo. Bawat tamang hula ay nagbibigay sa iyo ng {token} tokens. Kumonekta ng wallet at simulan ang panalo ngayon.",
+    "totalPredictions": "kabuuang nakarehistrong hula",
+    "all": "Lahat",
+    "group": "Grupo",
+    "difficulty": {
+      "easy": "Madali x1",
+      "medium": "Katamtaman x2",
+      "hard": "Mahirap x3"
+    },
+    "reward": "Gantimpala",
+    "live": "LIVE",
+    "draw": "Draw (x2.5)",
+    "confirm": "Kumpirmahin ang Hula",
+    "selectHint": "Piliin ang iyong hula",
+    "connectWallet": "Kumonekta ng wallet para maghula",
+    "groupStage": "Group Stage: 72 laro",
+    "groupsInfo": "12 grupo (A-L)",
+    "teamsInfo": "48 bansa",
+    "knockoutNote": "Pumili ng grupo para i-filter ang mga laro. Ang knockout stage (Round of 32, Round of 16, Quarter-finals, Semifinals, Final) ay papatayin pag nagsimula na ang torneo."
+  },
+  "ranking": {
+    "badge": "Leaderboard",
+    "heading": "MGA TOP PREDICTOR",
+    "subtitle": "Ang mga pinakamahusay na World Cup predictor ay panalo ng eksklusibong {token} gantimpala. Umakyat sa ranking at sakop ang unang pwesto.",
+    "table": {
+      "rank": "#",
+      "predictor": "Predictor",
+      "points": "Puntos",
+      "predictions": "Mga Hula",
+      "accuracy": "Tama",
+      "streak": "Streak"
+    },
+    "precision": "tama",
+    "rewards": {
+      "first": {
+        "place": "Unang Pwesto",
+        "reward": "50,000 $MUNDIAL",
+        "extra": "+ Exklusibong Airdrop"
+      },
+      "second": {
+        "place": "Ikalawang Pwesto",
+        "reward": "25,000 $MUNDIAL",
+        "extra": "+ Ambassador Role"
+      },
+      "third": {
+        "place": "Ikatlong Pwesto",
+        "reward": "10,000 $MUNDIAL",
+        "extra": "+ Exklusibong Merch"
+      }
+    }
+  },
+  "token": {
+    "badge": "Tungkol sa Token",
+    "heading": "$MUNDIAL",
+    "subtitle": "Ang token na nag-iisa ng pagmamahal sa futbol sa lakas ng Solana blockchain. Available na ngayon sa pump.fun.",
+    "network": "Network: Solana",
+    "price": "Kasalukuyang Presyo",
+    "buyButton": "Bilhin sa pump.fun",
+    "features": {
+      "security": {
+        "title": "Auditable na Seguridad",
+        "description": "Mga verifyable na kontrata sa Solana. Walang rug pulls, walang honeypots. Full transparency sa bawat transaksyon."
+      },
+      "community": {
+        "title": "Global na Komunidad",
+        "description": "800M+ tagasalita na konektado sa pagmamahal sa futbol. Ang token na nag-iisa ng mundo sa pamamagitan ng sports."
+      },
+      "deflationary": {
+        "title": "Deflasyonaryo",
+        "description": "Buy & burn na mekanismo sa bawat hula. Habang mas marami ang naglalaro, mas nangingilaw ang token."
+      }
+    },
+    "howToWin": {
+      "title": "Paano Kumita ng $MUNDIAL",
+      "steps": [
+        {
+          "title": "Kumonekta ng Wallet",
+          "description": "I-link ang iyong Solana wallet (Phantom o Solflare) nang ligtas."
+        },
+        {
+          "title": "Humula ng Laro",
+          "description": "Pumili ng panalo, draw o top scorer. Kumita ng puntos sa bawat tamang hula."
+        },
+        {
+          "title": "Umakyat sa Ranking",
+          "description": "Magkumpitensya sa libo-libong predictor. Ang mga pinakamahusay ay nanalo ng malaking gantimpala."
+        },
+        {
+          "title": "Kunin ang Tokens",
+          "description": "I-convert ang iyong puntos sa totoong $MUNDIAL. Habang mas mahusay ka, mas madami ang kikitain."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "brand": "Ang World Cup prediction platform kung saan nakilala ang pagmamahal sa futbol sa lakas ng Solana. Humula, manalo at sakop.",
+    "builtOn": "Binuo sa Solana",
+    "liveOn": "Live sa pump.fun",
+    "navigation": "Navigasyon",
+    "links": {
+      "predictions": "Mga Hula",
+      "ranking": "Ranking",
+      "tokenInfo": "Token Info",
+      "buyToken": "Bilhin $MUNDIAL"
+    },
+    "community": "Komunidad",
+    "social": {
+      "telegram": "Telegram",
+      "twitter": "X (Twitter)",
+      "pumpfun": "pump.fun"
+    },
+    "copyright": "© 2026 $MUNDIAL. Lahat ng karapatan ay nakalaan. Ito ay hindi pinansyal na payo. Ang mga cryptocurrency ay may risgo.",
+    "madeWith": "Ginawa ng may ❤️ para sa global na futbol komunidad"
+  },
+  "loading": "Naglo-load ng $MUNDIAL...",
+  "languageSwitcher": {
+    "en": "EN",
+    "es": "ES",
+    "pt": "PT",
+    "de": "DE",
+    "fr": "FR"
+  }
+}
