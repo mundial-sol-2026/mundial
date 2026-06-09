@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { sql } from '@vercel/postgres';
+import { dbPool } from '@/lib/db';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Método no permitido' });
+  if (req.method !== 'POST') return res.status(405).end();
   
   const { matchId, result, tokensPerWinner, adminSecret } = req.body;
 
@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(400).json({ error: 'Faltan parámetros: matchId, result, tokensPerWinner' });
   }
 
-  const client = await sql.connect();
+  const client = await dbPool.connect();
 
   try {
     await client.query('BEGIN');
