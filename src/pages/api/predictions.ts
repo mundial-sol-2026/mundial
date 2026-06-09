@@ -3,21 +3,19 @@
  * POST /api/predictions
  * ========================================
  * Endpoint CRÍTICO para guardar predicciones con firma criptográfica
- * 
- * Flujo:
+ * * Flujo:
  * 1. Frontend obtiene firma del usuario (sin gas)
  * 2. Backend verifica la firma criptográficamente
  * 3. Backend valida que el partido no haya comenzado
- * 4. Si todo es válido, guarda en Vercel Postgres
- * 
- * Prevención de ataques:
+ * 4. Si todo es válido, guarda en Neon Postgres
+ * * Prevención de ataques:
  * - Replay attacks: Validación de timestamp reciente
  * - Front-running: Validación de hora del partido
  * - Suplantación: Verificación criptográfica Ed25519
  */
 
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { sql } from '@vercel/postgres';
+import { dbPool } from '@/lib/db'; // Pool centralizado de Neon Serverless
 import {
   verifySolanaSignature,
   validateMessageTimestamp,
@@ -99,9 +97,10 @@ export default async function handler(
     const { matchId, vote } = parsedMessage;
 
     // 🛡️ SEGURIDAD 4: Anti-Front-Running - Validar que el partido no haya comenzado
-    const matchResult = await sql`
-      SELECT start_time, status FROM matches WHERE id = ${matchId}
-    `;
+    const matchResult = await dbPool.query(
+      'SELECT start_time, status FROM matches WHERE id = $1',
+      [matchId]
+    );
 
     if (matchResult.rows.length === 0) {
       return res.status(404).json({
@@ -127,13 +126,14 @@ export default async function handler(
       });
     }
 
-    // 🔥 Todo pasó validación de seguridad, guardar en la base de datos
-    await sql`
-      INSERT INTO predictions (user_wallet, match_id, predicted_winner)
-      VALUES (${publicKey}, ${matchId}, ${vote})
-      ON CONFLICT (user_wallet, match_id) DO UPDATE
-      SET predicted_winner = ${vote}, created_at = CURRENT_TIMESTAMP
-    `;
+    // 🔥 Guardar de forma segura en Neon Postgres utilizando consultas parametrizadas
+    await dbPool.query(
+      `INSERT INTO predictions (user_wallet, match_id, predicted_winner)
+       VALUES ($1, $2, $3)
+       ON CONFLICT (user_wallet, match_id) DO UPDATE
+       SET predicted_winner = $3, created_at = CURRENT_TIMESTAMP`,
+      [publicKey, matchId, vote]
+    );
 
     console.log(`✅ Predicción guardada: ${publicKey.slice(0, 8)}... -> ${vote} en ${matchId}`);
 
