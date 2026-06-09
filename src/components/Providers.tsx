@@ -25,9 +25,28 @@ interface ProvidersProps {
   children: ReactNode;
 }
 
+/**
+ * ========================================
+ * Providers Component
+ * ========================================
+ * Configura los proveedores de Solana con proxy seguro para RPC
+ * 
+ * IMPORTANTE: El endpoint apunta a /api/rpc (proxy local)
+ * en lugar de exponer la API key de Helius/QuickNode directamente.
+ */
 export const Providers: FC<ProvidersProps> = ({ children }) => {
   const router = useRouter();
-  const endpoint = useMemo(() => clusterApiUrl("mainnet-beta"), []);
+  
+  // 🛡️ Endpoint seguro: Usa proxy local en lugar de RPC público
+  // El proxy (/api/rpc) añade la API key de forma segura en el servidor
+  const endpoint = useMemo(() => {
+    // En desarrollo local: http://localhost:3000/api/rpc
+    // En producción (Vercel): https://mundialprize2026.vercel.app/api/rpc
+    if (typeof window !== 'undefined') {
+      return `${window.location.origin}/api/rpc`;
+    }
+    return 'http://localhost:3000/api/rpc';
+  }, []);
 
   const wallets = useMemo(
     () => [new PhantomWalletAdapter(), new SolflareWalletAdapter()],
