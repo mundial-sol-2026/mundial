@@ -3,13 +3,16 @@
  * POST /api/claim
  * ========================================
  * Endpoint CRÍTICO para reclamar tokens de pump.fun
- * * Flujo:
- * 1. Usuario solicita reclamar sus tokens acumulados
+ * 
+ * Flujo:
+ * 1. Rate limiting por IP + wallet
  * 2. Backend valida saldo en la DB (con bloqueo de fila preventivo)
  * 3. Se libera inmediatamente la transacción SQL para liberar el Pool de Neon
  * 4. Backend genera y espera la confirmación de la transferencia en Solana
  * 5. Si la blockchain falla, se ejecuta un rollback/reembolso atómico en la DB
- * * Prevención de ataques:
+ * 
+ * Prevención de ataques:
+ * - Rate Limiting: Upstash Ratelimit por IP y wallet
  * - Double Spend: Bloqueo de fila (FOR UPDATE) en PostgreSQL
  * - Connection Exhaustion: Liberación temprana del pool de conexiones serverless
  * - Race Condition: Transacciones aisladas BEGIN/COMMIT
@@ -18,9 +21,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { Connection, Keypair, PublicKey, Transaction } from '@solana/web3.js';
 import { getOrCreateAssociatedTokenAccount, createTransferInstruction } from '@solana/spl-token';
-import { dbPool } from '@/lib/db'; // Pool centralizado de Neon Serverless
+import { dbPool } from '@/lib/db';
 import bs58 from 'bs58';
 import { isValidSolanaAddress } from '@/lib/crypto';
+import { checkClaimRateLimit } from '@/lib/ratelimit';
 
 interface ClaimPayload {
   userWallet: string;
@@ -47,15 +51,47 @@ if (!SOLANA_RPC_URL || !DISTRIBUTOR_PRIVATE_KEY || !REWARD_TOKEN_MINT) {
   console.error('❌ Falta configuración crítica en variables de entorno');
 }
 
+function getClientIP(req: NextApiRequest): string {
+  const forwarded = req.headers['x-forwarded-for'];
+  if (typeof forwarded === 'string') {
+    return forwarded.split(',')[0].trim();
+  }
+  return req.socket.remoteAddress || 'unknown';
+}
+
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Response>
+  res: NextApiResponse
 ) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Método no permitido' });
+  
   const { userWallet } = req.body as ClaimPayload;
 
   if (!userWallet || !isValidSolanaAddress(userWallet)) {
     return res.status(400).json({ error: 'Wallet inválida', code: 'INVALID_WALLET' });
+  }
+
+  // ─── RATE LIMITING ───
+  // Limitamos tanto por IP como por wallet para prevenir ataques
+  const clientIP = getClientIP(req);
+  
+  const [ipLimit, walletLimit] = await Promise.all([
+    checkClaimRateLimit(`ip:${clientIP}`),
+    checkClaimRateLimit(`wallet:${userWallet}`),
+  ]);
+
+  if (!ipLimit.success) {
+    return res.status(429).json({
+      error: 'Demasiadas solicitudes desde tu IP. Intenta de nuevo en 1 minuto.',
+      code: 'RATE_LIMIT_IP'
+    });
+  }
+
+  if (!walletLimit.success) {
+    return res.status(429).json({
+      error: 'Demasiadas solicitudes para esta wallet. Intenta de nuevo en 1 minuto.',
+      code: 'RATE_LIMIT_WALLET'
+    });
   }
 
   // Obtenemos un cliente individualizado del Pool de Neon para la transacción
@@ -96,7 +132,7 @@ export default async function handler(
     console.error('❌ Error de DB en pre-claim:', error);
     return res.status(500).json({ error: 'Error interno de base de datos', code: 'INTERNAL_ERROR' });
   } finally {
-    client.release(); // Importante: Devolvemos la conexión al pool de Neon para evitar saturación
+    client.release(); // Devolvemos la conexión al pool de Neon para evitar saturación
   }
 
   // 2. FASE BLOCKCHAIN (FUERA DE LA TRANSACCIÓN SQL): No retiene recursos de base de datos
@@ -115,7 +151,7 @@ export default async function handler(
     const transferInstruction = createTransferInstruction(
       distributorTA.address, userTA.address, DISTRIBUTOR_KEYPAIR.publicKey, amountInLamports
     );
-    
+
     const transaction = new Transaction().add(transferInstruction);
     const signature = await connection.sendTransaction(transaction, [DISTRIBUTOR_KEYPAIR], {
       skipPreflight: false,
@@ -132,15 +168,33 @@ export default async function handler(
 
     // 3. FASE DE REEMBOLSO (Solo si blockchain falla): Abre otra conexión ultra-corta para restaurar fondos
     const refundClient = await dbPool.connect();
+    let refundSuccess = false;
     try {
-      await refundClient.query(
+      const refundResult = await refundClient.query(
         `UPDATE user_rewards SET claimed_tokens = claimed_tokens - $1, updated_at = NOW() WHERE user_wallet = $2`,
         [claimableAmount, userWallet]
       );
+      refundSuccess = (refundResult.rowCount ?? 0) > 0;
+      
+      if (!refundSuccess) {
+        console.error('🔥 ALERTA CRÍTICA: El rollback no afectó ninguna fila. Wallet:', userWallet, 'Amount:', claimableAmount);
+      } else {
+        console.log('✅ Rollback exitoso. Saldo restaurado para wallet:', userWallet);
+      }
     } catch (refundError) {
       console.error('🔥 ERROR CRÍTICO: No se pudo reembolsar el saldo de forma automática:', refundError);
+      // Aquí deberías disparar una alerta a tu sistema de monitoreo (PagerDuty, Slack, etc.)
+      // Ejemplo: await sendAlert(`ROLLBACK FAILED for wallet ${userWallet}`);
     } finally {
       refundClient.release();
+    }
+
+    // Si el rollback falló, retornamos un error diferente para que el usuario contacte soporte
+    if (!refundSuccess) {
+      return res.status(500).json({
+        error: 'Error crítico: Tu transacción falló y no pudimos restaurar tu saldo automáticamente. Contacta soporte inmediatamente.',
+        code: 'WEB3_ERROR_REFUND_FAILED'
+      });
     }
 
     return res.status(500).json({
