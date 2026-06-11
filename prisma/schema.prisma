@@ -1,32 +1,57 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// Prisma Schema - MundialPrize2026
+// Este schema mapea la base de datos real de producción (PostgreSQL)
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+/// Tabla de Partidos del Mundial 2026
+model Match {
+  id        String   @id @db.VarChar(255)
+  homeTeam  String   @map("home_team") @db.VarChar(100)
+  awayTeam  String   @map("away_team") @db.VarChar(100)
+  startTime Int      @map("start_time") /// Unix timestamp en segundos
+  status    String   @default("SCHEDULED") @db.VarChar(50) /// SCHEDULED, LIVE, FINISHED
+  result    String?  @db.VarChar(50) /// HOME_WIN, AWAY_WIN, DRAW
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  predictions Prediction[]
+
+  @@index([status])
+  @@index([startTime], map: "idx_matches_start_time")
+  @@map("matches")
 }
 
-model Post {
-  id        String   @id @default(cuid())
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  authorId  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+/// Tabla de Predicciones (Guardadas con firma criptográfica verificada)
+model Prediction {
+  id              Int      @id @default(autoincrement())
+  userWallet      String   @map("user_wallet") @db.VarChar(44) /// Solana address (base58)
+  matchId         String   @map("match_id") @db.VarChar(255)
+  predictedWinner String   @map("predicted_winner") @db.VarChar(50) /// HOME, AWAY, DRAW
+  isProcessed     Boolean  @default(false) @map("is_processed") /// Flag para evitar procesar dos veces
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  match Match @relation(fields: [matchId], references: [id], onDelete: Cascade)
+
+  @@unique([userWallet, matchId], map: "uq_prediction_wallet_match")
+  @@index([userWallet])
+  @@index([matchId])
+  @@index([isProcessed])
+  @@map("predictions")
+}
+
+/// Tabla de Saldos y Reclamaciones (Estado financiero de cada usuario)
+model UserReward {
+  userWallet       String   @id @map("user_wallet") @db.VarChar(44)
+  accumulatedTokens Decimal @default(0) @map("accumulated_tokens") @db.Decimal(20, 6)
+  claimedTokens    Decimal @default(0) @map("claimed_tokens") @db.Decimal(20, 6)
+  updatedAt        DateTime @default(now()) @map("updated_at")
+
+  @@map("user_rewards")
 }
